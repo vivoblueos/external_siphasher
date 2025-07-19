@@ -1,0 +1,13 @@
+import("//build/templates/build_template.gni")
+
+build_rust("siphasher") {
+  epoch = "1"
+  crate_type = "rlib"
+  sources = [ "//external/siphasher/v1.0.1/src/lib.rs" ]
+  inputs = []
+  edition = "2018"
+
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
+}
